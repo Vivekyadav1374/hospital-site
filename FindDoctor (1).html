@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<Title>Login Form</title>
+<link rel="stylesheet" type="text/css" href="hospital.css">
+<link rel="icon" href="images/JAM-icn.ico"  type="image/x-icon">
+</head>
+<body style="background-image: url(images/bcs1.jpg);">
+<div style="background-color:transparent;" ><a href="website1.html"><img src="images/JAM-removebg-preview.png" alt="logo"  style="width:200px; height:200px; margin-top:7px; margin-left:5px;"></a>
+<span>	<pre style="font-size : 30px;font-weight: bold; margin-left: 350px; margin-top: -170px;color:gold; ">नीलकंठ आई हास्पिटल गोसाईगंज लखनऊ</pre>
+
+ <P style="font-size : 30px;font-weight: bold;margin-left: 260px;margin-top: 50px; color:gold; font-family: 
+
+times new roman ,times ,serif " > NEELKANTH EYE HOSPITAL GOSAINGANJ LUCKNOW</P>
+<h2 class="h2"> <span><a style=" text-decoration:none; color:gold; margin-left:8px;" 
+
+target="_blank" href="website1.html">Home |</a></span><span>
+<a style=" text-decoration:none; color:gold; margin-left:10px;" href="aboutus.html" target="_blank">About Us |</a></span><span>
+<a style=" text-decoration:none; color:gold; margin-left:10px;" href="specialities.html" target="_blank">Our Services |</a></span><span>
+<a style=" text-decoration:none; color:gold;margin-left:10px;" href="Appointment.html" 
+
+target="_blank">Get Appointment | </a></span><span>
+<a style=" text-decoration:none; color:gold; margin-left:10px;" href="Medical_Tourism.html" > Medical Awareness | </a></span>
+<a style=" text-decoration:none; color:gold; margin-left:10px;" href="Career.html"> Gallery |</a></span><span><a style=" text-decoration:none; color:gold; margin-left:10px;" href="Contact_Us.html" > Contact Us |</a></span><span><a style=" text-decoration:none; color:gold; margin-left:15px;" 
+href="FindDoctor (1).html" > Login |</a></span><span><a style=" text-decoration:none; color:gold; margin-left:15px;" href="Review.html" target="_blank"> Review </a></span></h2></div>
+
+<fieldset style="filter:blur(0.2px); border-style:outset; border-width:5px; margin-top:-15px;" id="Fimg">
+<div id="img">
+<form onsubmit="return Validate()">
+<h1 style="margin-left:85px; color:white; font-size:70px;margin-top:-10px;">Login Here</h1>
+<div>
+<div  >
+<input type="text" placeholder="Name" style="border:inset; margin-left:100px; width:300px; height:20px; font-size:20px; text-align:center;" name="NAME" id="NAME"><br>
+<span id="name" style="margin-left:55px ;color:white; font-weight:bolder; font-size:20px;"></span>
+</div>
+<br>
+<br>
+<div>
+
+<input type="text" placeholder="Email" style="border:inset; margin-left:100px; width:300px; height:20px; font-size:20px;  text-align:center;"name="Email" id="email"><br>
+<span id="Email" style="margin-left:55px ;color:white; font-weight:bolder; font-size:20px;"></span>
+</div>
+<br>
+<br>
+<div>
+
+<input type="password" placeholder="Password" style="border:inset; margin-left:100px; width:300px; height:20px; font-size:20px;  text-align:center;"  name="password" id="password"><br>
+
+<span id="Password" style="margin-left:55px ;color:white; font-weight:bolder; font-size:20px;"></span>
+
+<br>
+<br>
+<div>
+<!--<input type="password" placeholder="Confirm Password" style="border:inset; margin-left:100px; width:300px; height:20px;font-size:20px;  text-align:center;" name="conpass" id="conpass"><br>
+<span id="Conpass" style="margin-left:55px ;color:white; font-weight:bolder; font-size:20px;"></span>
+
+</div>
+-->
+</div>
+
+<br>
+<br>
+<span><input type="Submit" value="Log In" class="btn"></span>
+<input type="reset" value="Reset" class="btn" >
+</div>
+</form>
+</div>
+</fieldset>
+<script type="text/javascript">
+
+function Validate(){
+	var NAME=document.getElementById('NAME').value;
+	var email=document.getElementById('email').value;
+	var password=document.getElementById('password').value;
+	var conpass=document.getElementById('conpass').value;
+
+	
+	if(NAME==""){
+		document.getElementById('name').innerHTML="** Please fill the name field";
+		return false;
+	}
+
+	if((NAME.length<=2 ) ||(NAME.length>=30)){
+		document.getElementById('name').innerHTML="** Name must be between 2 and 30";
+		return false;
+	}
+
+	if(!isNaN(NAME)){
+		document.getElementById('name').innerHTML="** Only characters  are allowed";
+		return false;
+	}
+
+	if(email==""){
+		document.getElementById('Email').innerHTML="** Please fill the mail id ";
+		return false;
+	}
+
+	if(email.indexOf('@')<=0){
+		document.getElementById('Email').innerHTML="** Invalid @ position";
+		return false;
+	}
+
+	if((email.charAt(email.length-4)!='.') && (email.charAt(email.length-3)!='.')){
+		document.getElementById('Email').innerHTML="** Invalid dot position";
+		return false;
+	}
+
+
+    if(password==""){
+		document.getElementById('Password').innerHTML="** Please fill the password ";
+		return false;
+	}
+
+	if((password.length<=5 ) ||(password.length>=15)){
+		document.getElementById('Password').innerHTML="** Password must be between 5 and 9";
+		return false;
+	}
+
+	if(conpass==""){
+		document.getElementById('Conpass').innerHTML="** Please fill the password again ";
+		return false;
+	}
+
+     if(password!=conpass){
+		document.getElementById('Conpass').innerHTML="** Password not matched enter again";
+		return false;
+	}
+
+}
+</script>
+
+</body>
+</html>

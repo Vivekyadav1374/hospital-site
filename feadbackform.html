@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>FEADBACK FORM
+	</title>
+</head>
+<body>
+<fieldset style="width: 530px; background-color: red ;">
+<h1>FEADBACK FORM</h1>
+
+<form  onsubmit="return Validation()">
+
+<input type="text" placeholder="Name" target="_blank" style="width:500px;font-size:20px;" name="Name" id="Name"><br>
+<span id="name" style="margin-left: ;color:white; font-weight:bolder; font-size:20px;"></span>
+<br>
+
+<input type="text" placeholder="Email" target="_blank" style="width:500px;font-size:20px;" name="Email" id="Email"><br>
+<span id="email" style="margin-left: ;color:white; font-weight:bolder; font-size:20px;"></span>
+<br>
+
+<span style="font-size:27px;font-weight: bolder;">Give feadback to us</span><span style="color: red;">*</span><br>
+<textarea rows="20" cols="70" style="overflow-y:scroll;" id="text"></textarea><br>
+<span id="Text" style="font-size:27px;font-weight: bolder;"></span><br />
+
+<input type="submit" value="Submit" >
+
+<input type="reset" value="Reset" >
+</form>
+</fieldset>
+<script type="text/javascript">
+
+	function Validation(){
+    
+    var Name=document.getElementById('Name').value;
+    var Email=document.getElementById('Email').value;
+    var text=document.getElementById('text').value;
+    
+
+	if(Name==""){
+		document.getElementById('name').innerHTML="** Please fill the first name";
+		return false;
+	}
+
+	if((Name.length<=2 ) ||(Name.length>=15)){
+		document.getElementById('name').innerHTML="** Name must be between 2 and 30";
+		return false;
+	}
+
+	if(!isNaN(Name)){
+		document.getElementById('name').innerHTML="** Only characters  are allowed";
+		return false;
+	}
+
+
+	if(Email==""){
+		document.getElementById('email').innerHTML="** Please fill the mail id ";
+		return false;
+	}
+
+	if(Email.indexOf('@')<=0){
+		document.getElementById('email').innerHTML="** Please enter valid mail";
+		return false;
+	}
+
+	if((Email.charAt(Email.length-4)!='.') && (Email.charAt(Email.length-3)!='.')){
+		document.getElementById('email').innerHTML="** Please enter valid mail";
+		return false;
+	}
+
+	if(text==""){
+		document.getElementById('Text').innerHTML="** Please fill this field";
+		return false;
+	}
+
+}
+    
+</script>
+</body>
+</html>
